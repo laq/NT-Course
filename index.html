@@ -1,0 +1,414 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HTML5 and CSS3</title>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Web page basics</h1>
+                <h2>HTML 5 and CSS3</h2>
+            </section>
+            <section>
+                <h1>HTML5</h1>
+            </section>
+            <section>
+                <h2>What is HTML?</h2>
+                <p>HyperText Markup Language</p>
+                <p class="fragment">"A markup language is a system for annotating a document in a way that is syntactically distinguishable from the text" wikipedia</p>
+            </section>
+            <section>
+                <section>
+                    <h2>Básic HTML Structure</h2>
+                    <p> Tags: </p>
+                    <pre class="fragment">  &lt;tagname&gt;content&lt;/tagname&gt; </pre>
+                    <p class="fragment"> Or, for void tags: </p>
+                    <pre class="fragment">  &lt;voidname&gt; or &lt;voidname/&gt; (if XML compliant) </pre>
+                    <p class="fragment"> <a href="http://w3c.github.io/html-reference/syntax.html#syntax-elements">See</a></p>
+                </section>
+                <section>
+                    <h2>Basic Tags</h2>
+                    <p>&lt;html&gt;</p>
+                    <p>&lt;head&gt;</p>
+                    <p>&lt;body&gt;</p>
+                    <p class="fragment">and others: </p>
+                    <p class="fragment">hn, p, a, div, br, table(tr,td), iframe, ol, ul, li, form, input, textarea, select, form, script, link</p>
+                    <p class="fragment"> <a href="https://www.w3.org/TR/1999/REC-html401-19991224/index/elements.html">See</a></p>
+                </section>
+                <section>
+                    <p>Comments: <pre> &lt;!Coment&gt; </pre> </p>
+                    <p>Doctype
+                        <pre>&lt;!DOCTYPE html&gt;</pre>
+                        <p> <span class="fragment highlight-red">Not</span> HTML tag </p>
+                        <p class="fragment">Instruction to the web browser </p>
+                        <section data-markdown class="fragment">
+                            <script type="text/template">
+                                ```
+                                <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+                                <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+                                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+                                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> ```
+                            </script>
+                        </section>
+                    </p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>HTML5</h2>
+                    <p> Best form to understand it?</p>
+                    <a class="fragment" href="https://www.w3.org/TR/html5/">Read/Search the specification</a>
+                </section>
+                <section>
+                    <h3>New Tags- <span class="fragment highlight-green">Semantic</span></h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tag</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>footer</td>
+                                <td>Footer for the document or a section</td>
+                            </tr>
+                            <tr>
+                                <td>header</td>
+                                <td>Header for the document or a section</td>
+                            </tr>
+                            <tr>
+                                <td>main</td>
+                                <td>Main content of a document</td>
+                            </tr>
+                            <tr>
+                                <td>progress</td>
+                                <td>Progress of a task</td>
+                            </tr>
+                            <tr>
+                                <td>time</td>
+                                <td>Date/time</td>
+                            </tr>
+                            <tr>
+                                <td>section</td>
+                                <td>Section in the document</td>
+                            </tr>
+                            <tr>
+                                <td>figure</td>
+                                <td>Self-contained content, use with figcaption</td>
+                            </tr>
+                            <tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>New Tags- Form</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tag</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>datalist</td>
+                                <td>Defines pre-defined options for input controls. Example:
+                                    <input list="browsers">
+                                    <datalist id="browsers">
+                                        <option value="Internet Explorer" />
+                                        <option value="Firefox" />
+                                        <option value="Chrome" />
+                                        <option value="Opera" />
+                                        <option value="Safari" />
+                                    </datalist>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>keygen</td>
+                                <td>Defines a key-pair generator field (for forms)</td>
+                            </tr>
+                            <tr>
+                                <td>output</td>
+                                <td>Defines the result of a calculation:
+                                    <form action="/" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+                                        0
+                                        <input type="range" id="a" name="a" value="50"> 100 +
+                                        <input type="number" id="b" name="b" value="50"> =
+                                        <output name="x" for="a b"></output>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>New Types- Form</h2>
+                    <form>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tag</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>date</td>
+                                    <td>
+                                        <input type="date" name="date">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>color</td>
+                                    <td>
+                                        <input type="color" name="favcolor" value="#ff0000">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>email</td>
+                                    <td>
+                                        <input type="email" name="email">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>range</td>
+                                    <td> //see output
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>tel</td>
+                                    <td>
+                                        <input type="tel" name="tel">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>url</td>
+                                    <td>
+                                        <input type="url" name="url">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <input type="submit">
+                    </form>
+                </section>
+                <section>
+                    <h2>New Tags- Graphics</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tag</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td valign="top">svg</td>
+                                <td>
+                                    <ul>
+                                        <li>2d graphics in XML </li>
+                                        <li>Shapes as Objects</li>
+                                        <li>Resolution independent</li>
+                                        <li>Support for handlers</li>
+                                        <li>Not for games(slow)</li>
+                                    </ul>
+                                    <svg width="100" height="100">
+                                        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+                                    </svg>
+                                    <svg width="100" height="100">
+                                        <rect width="100" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+                                    </svg>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>New Tags- Graphics</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tag</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td valign="top">canvas</td>
+                                <td>
+                                    <ul>
+                                        <li>2D Graphics on the fly</li>
+                                        <li>Pixel by Pixel</li>
+                                        <li>can save as .png or .jpg</li>
+                                        <li>Suited for graphic-intensive games</li>
+                                    </ul>
+                                    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">No canvas support</canvas>
+                                    <script>
+                                    var c = document.getElementById("myCanvas");
+                                    var ctx = c.getContext("2d");
+                                    ctx.beginPath();
+                                    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+                                    ctx.stroke();
+                                    ctx.fillStyle = "blue";
+                                    ctx.fill();
+                                    </script>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>New Tags- Media</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tag</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>audio</td>
+                                <td>$1</td>
+                            </tr>
+                            <tr>
+                                <td>embed</td>
+                                <td>$2</td>
+                            </tr>
+                            <tr>
+                                <td>source</td>
+                                <td>$3</td>
+                            </tr>
+                            <tr>
+                                <td>track</td>
+                                <td>$3</td>
+                            </tr>
+                            <tr>
+                                <td>video</td>
+                                <td>$3</td>
+                            </tr>
+                            <tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <a href="http://www.w3schools.com/html/html5_new_elements.asp">For more..</a>
+                    <p>Not only new tags are added</p>
+                    <p class="fragment highlight-red">Some properties change too</p>
+                    <p class="fragment">For full index <a href="http://html5doctor.com/element-index/">see</a></p>
+                </section>
+            </section>
+            <section>
+                <h1>CSS3</h1>
+            </section>
+            <section>
+                <h2>Bases de CSS</h2>
+                <ul>
+                    <li>Selector()</li>
+                    <li>Property()</li>
+                    <li></li>
+                </ul>
+            </section>
+            <section>
+                <h2>CSS3 nice things</h2>
+                <ul>
+                    <li>2D/3D Transformations</li>
+                    <br>
+                    <style>
+                    div#myDiv {
+                        transform: rotate(20deg);
+                    }
+                    </style>
+                    <div id="myDiv">
+                        This is rotated
+                    </div>
+                    <li>Animations </li>
+                    <style>
+                    div#myDiv2 {
+                        width: 100px;
+                        height: 100px;
+                        background-color: red;
+                        animation-name: example;
+                        animation-duration: 4s;
+                    }
+                    
+                    @keyframes example {
+                        from {
+                            background-color: red;
+                        }
+                        to {
+                            background-color: yellow;
+                        }
+                    }
+                    </style>
+                    <div id="myDiv2">
+                    </div>
+                </ul>
+            </section>
+            <section>
+                <h2>Responsive</h2>
+                <p>Media Queries</p>
+                <ul>
+                    <li>width and height of the viewport</li>
+                    <li>width and height of the device</li>
+                    <li>orientation (is the tablet/phone in landscape or portrait mode?)</li>
+                    <li>resolution</li>
+                </ul>                
+            </section>
+            <section>
+            	<p>And Many more ... <a href="http://www.w3schools.com/css/css3_intro.asp">see</a></p>
+            </section>
+            <section>
+                <h2>Class exercise</h2>
+            </section>
+            <section> References:
+            	http://www.w3schools.com/
+            	https://www.w3.org/
+            </section>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+            src: 'plugin/markdown/marked.js'
+        }, {
+            src: 'plugin/markdown/markdown.js'
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }]
+    });
+    </script>
+</body>
+
+</html>
