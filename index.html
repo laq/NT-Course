@@ -287,23 +287,31 @@
                         <tbody>
                             <tr>
                                 <td>audio</td>
-                                <td>$1</td>
-                            </tr>
-                            <tr>
-                                <td>embed</td>
-                                <td>$2</td>
-                            </tr>
-                            <tr>
-                                <td>source</td>
-                                <td>$3</td>
-                            </tr>
-                            <tr>
-                                <td>track</td>
-                                <td>$3</td>
+                                <td>
+                                    <audio controls>
+                                        <source src="resources/Pyotr_Ilyich_Tchaikovsky_-_1812_overture.ogg" type="audio/ogg"> Your browser does not support the audio element.
+                                    </audio>
+                                </td>
                             </tr>
                             <tr>
                                 <td>video</td>
-                                <td>$3</td>
+                                <td>
+                                    <video width="320" height="100" controls>
+                                        <source src="https://player.vimeo.com/external/121142413.hd.mp4?s=55cd0e066b1b588b4121a6280da4a9d84bc97947&profile_id=119&oauth2_token_id=57447761" type="video/mp4"> Your browser does not support the video tag.
+                                    </video>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>embed</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>source</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>track</td>
+                                <td></td>
                             </tr>
                             <tr>
                         </tbody>
@@ -317,71 +325,151 @@
                 </section>
             </section>
             <section>
-                <h1>CSS3</h1>
-            </section>
-            <section>
-                <h2>Bases de CSS</h2>
-                <ul>
-                    <li>Selector()</li>
-                    <li>Property()</li>
-                    <li></li>
-                </ul>
-            </section>
-            <section>
-                <h2>CSS3 nice things</h2>
-                <ul>
-                    <li>2D/3D Transformations</li>
-                    <br>
-                    <style>
-                    div#myDiv {
-                        transform: rotate(20deg);
-                    }
-                    </style>
-                    <div id="myDiv">
-                        This is rotated
-                    </div>
-                    <li>Animations </li>
-                    <style>
-                    div#myDiv2 {
-                        width: 100px;
-                        height: 100px;
-                        background-color: red;
-                        animation-name: example;
-                        animation-duration: 4s;
-                    }
-                    
-                    @keyframes example {
-                        from {
+                <section>
+                    <h1>CSS3</h1> Cascading Style Sheets
+                    <p class="fragment">"is a style sheet language used for describing the presentation of a document written in a markup language. Although most often used to set the visual style of web pages and user interfaces written in HTML and XHTML, the language can be applied to any XML document, including plain XML, SVG and XUL, and is applicable to rendering in speech, or on other media." from Wikipedia</p>
+                </section>
+                <section>
+                    <p>With an external stylesheet file, you can change the look of an entire website by changing just one file!</p>
+                    <h3>😱</h3>
+                </section>
+                <section>
+                    <h2>CSS Basis</h2>
+                    <ul>
+                        <li>Selector</li>
+                        <li>Declaration block</li>
+                        <ul>
+                            <li>Property</li>
+                            <li>Value</li>
+                        </ul>
+                    </ul>
+                    <pre class="fragment"><code class="hljs" data-trim contenteditable>
+roof {
+  background-color: green;
+}
+
+doors {
+  background-color: yellow;
+  width: 100px;
+  height: 300px;
+}
+					</code></pre>
+                </section>
+                <section>
+                    <h2>Selectors</h2>
+                    <p>Element: p</p>
+                    <p>Id: #myId</p>
+                    <p>Class: .myClass</p>
+                </section>
+                <section>
+                    <p>Groups with commas: h1,p { ...</p>
+                    <p>/* Comments */</p>
+                    <p>Insert as:</p>
+                    <ul class="fragment">
+                        <li>External (&lt;link&gt;)</li>
+                        <li>Internal (&lt;style&gt;)</li>
+                        <li>Inline (&lt;tag style= &gt;)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Understanding Selectors in CSS</h2>
+                    <a href="http://howtocodeinhtml.com/chapter7.html" target="_blank">See</a>
+                </section>
+                <section>
+                    <h2>And more</h2>
+                    <p>Box Model</p>
+                    <p>Outline</p>
+                    <p>Fonts</p>
+                    <p>Icons (Font awsome, Bootstrap, Material)</p>
+                    <p><a href="http://www.w3schools.com/css/css_intro.asp">See</a></p>
+                </section>
+                <section>
+                    <h2>CSS3 nice things</h2>
+                    <ul>
+                        <li>2D/3D Transformations</li>
+                        <br>
+                        <style>
+                        div#myDiv {
+                            transform: rotate(20deg);
+                        }
+                        </style>
+                        <div id="myDiv">
+                            This is rotated
+                        </div>
+                        <li>Animations </li>
+                        <style>
+                        div#myDiv2 {
+                            width: 100px;
+                            height: 100px;
                             background-color: red;
+                            animation-name: example;
+                            animation-duration: 20s;
+                            animation-play-state: paused;
                         }
-                        to {
-                            background-color: yellow;
+                        
+                        div#myDiv2:hover {
+                            animation-play-state: running;
                         }
-                    }
-                    </style>
-                    <div id="myDiv2">
-                    </div>
-                </ul>
-            </section>
-            <section>
-                <h2>Responsive</h2>
-                <p>Media Queries</p>
-                <ul>
-                    <li>width and height of the viewport</li>
-                    <li>width and height of the device</li>
-                    <li>orientation (is the tablet/phone in landscape or portrait mode?)</li>
-                    <li>resolution</li>
-                </ul>                
-            </section>
-            <section>
-            	<p>And Many more ... <a href="http://www.w3schools.com/css/css3_intro.asp">see</a></p>
+                        
+                        @keyframes example {
+                            from {
+                                background-color: red;
+                            }
+                            to {
+                                background-color: yellow;
+                            }
+                            100% {
+                                transform: rotate(5turn);
+                            }
+                        }
+                        </style>
+                        <div id="myDiv2">
+                        </div>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Responsive</h2>
+                    <p>Media Queries</p>
+                    <ul>
+                        <li>width and height of the viewport</li>
+                        <li>width and height of the device</li>
+                        <li>orientation (is the tablet/phone in landscape or portrait mode?)</li>
+                        <li>resolution</li>
+                    </ul>
+                </section>
+                <section>
+                    <pre>
+                	<code class="hljs" data-trim contenteditable>
+@media not|only mediatype and (media feature) {
+    CSS-Code;
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+<link rel="stylesheet" media="mediatype and|not|only (media feature)" href="mystylesheet.css">
+                	</code>
+                	</pre>
+                	<p>Other media types: all, print, speech</p>
+                	<p>Other media features: height, max-color, min-resolution, orientation, update-frequency</p>
+                	<p><a href="http://www.w3schools.com/cssref/css3_pr_mediaquery.asp">See</a></p>
+                </section>
+                <section>
+                    <p>And Many more ... <a href="http://www.w3schools.com/css/css3_intro.asp">see</a></p>
+                </section>
             </section>
             <section>
                 <h2>Class exercise</h2>
             </section>
             <section> References:
-            	http://www.w3schools.com/
-            	https://www.w3.org/
+                <ul>
+                    <li>http://www.w3schools.com/</li>
+                    <li>https://www.w3.org/</li>
+                    <li>http://howtocodeinhtml.com/</li>
+                </ul>
             </section>
         </div>
     </div>
