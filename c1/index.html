@@ -382,7 +382,6 @@ doors {
                     <p>Fonts</p>
                     <p>Icons (Font awsome, Bootstrap, Material)</p>
                     <p><a href="http://www.w3schools.com/css/css_intro.asp">See</a></p>
-
                 </section>
                 <section>
                     <h2>CSS3 nice things</h2>
@@ -402,7 +401,7 @@ doors {
                         div#myDiv2 {
                             width: 100px;
                             height: 100px;
-                            background-color: red;
+                            background: linear-gradient(red, yellow);
                             animation-name: example;
                             animation-duration: 20s;
                             animation-play-state: paused;
@@ -413,14 +412,13 @@ doors {
                         }
                         
                         @keyframes example {
-                            from {
-                                background-color: red;
+                        	/* 0% == from*/
+                            50% {
+                                transform: rotate(1turn); /*deg,rad*/
+                                background: linear-gradient(red, green);
                             }
-                            to {
-                                background-color: yellow;
-                            }
-                            100% {
-                                transform: rotate(5turn);
+                            100% { /*to*/
+                                background: linear-gradient(red, blue);
                             }
                         }
                         </style>
@@ -454,16 +452,16 @@ doors {
 <link rel="stylesheet" media="mediatype and|not|only (media feature)" href="mystylesheet.css">
                 	</code>
                 	</pre>
-                	<p>Other media types: all, print, speech</p>
-                	<p>Other media features: height, max-color, min-resolution, orientation, update-frequency</p>
-                	<p><a href="http://www.w3schools.com/cssref/css3_pr_mediaquery.asp">See</a></p>
+                    <p>Other media types: all, print, speech</p>
+                    <p>Other media features: height, max-color, min-resolution, orientation, update-frequency</p>
+                    <p><a href="http://www.w3schools.com/cssref/css3_pr_mediaquery.asp">See</a></p>
                 </section>
                 <section>
                     <p>And Many more ... <a href="http://www.w3schools.com/css/css3_intro.asp">see</a></p>
                 </section>
             </section>
             <section>
-                <h2>Class exercise</h2>
+                <h2>Class exercise</h2> Do a web page with as many learned concepts as possible. It must include a javascript login.
             </section>
             <section> References:
                 <ul>
