@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HTML5 and CSS3</title>
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Javascript Basics</h1>
+            </section>
+            <section>
+                <h2>What is Javacript?</h2>
+                <p>"JavaScript is a
+                    <span class="fragment highlight-green">high-level</span>,
+                    <span class="fragment highlight-green"> dynamic</span>,
+                    <span class="fragment highlight-green"> untyped</span>, and
+                    <span class="fragment highlight-green">interpreted</span> programming language. It has been standardized in the
+                    <a href="https://www.ecma-international.org/ecma-262/7.0/#">ECMAScript language specification</a> ." -- wikipedia
+                </p>
+            </section>
+            <section>
+                <section>
+                    <h2>Simple types</h2>
+                    <p>"String" or 'String'</p>
+                    <p>Numbers: 1, 1.2, Infinity, NaN</p>
+                    <p>Boolean: true</p>
+                    <p>function(){}</p>
+                    <p>undefined</p>
+                    <p>null</p>
+                </section>
+                <section>
+                    <p>Logic: (&amp;,|) (with their short-circuit partners), console.log(null || "😁")</p>
+                    <p>Automatic type conversion: console.log("5" - 1)</p>
+                </section>
+                <section>
+                    <img src="http://jsforcats.com/images/console-replace.gif">
+                </section>
+                <section>
+                    <table>
+                        <tr>
+                            <td>Variables</td>
+                            <td>a or var a (Tentacles! not Boxes.)</td>
+                        </tr>
+                        <tr>
+                            <td>Control structures</td>
+                            <td>if(){}else{} or switch(){ case n: break;} or ternary(?:) </td>
+                        </tr>
+                        <tr>
+                            <td>Loops</td>
+                            <td>for, while, do while, for in (
+                                <pre style="width:100%"><code class="hljs" data-trim>
+var person = {fname:"John", lname:"Doe", age:25};
+for (x in person){}</code></pre> )
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+                <section>
+                    <table>
+                        <tr>
+                            <td>Arrays</td>
+                            <td>["bill", "tabby", "ceiling"]: [0], length, push ...</td>
+                        </tr>
+                        <tr>
+                            <td>Simple Objects</td>
+                            <td>
+                                <pre><code class="hljs" data-trim>var firstCat = { name: "bill", lastName: "the cat", address: "The Alley" }</code></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+                <section>
+                    <h2>Reserved Words</h2>
+                    <p>
+                        break case catch class const continue debugger default delete do else enum export extends false finally for function if implements import in instanceof interface let new null package private protected public return static super switch this throw true try typeof var void while with yield
+                    </p>
+                </section>
+                <section>
+                    <h2>Useful simple functions</h2>
+                    <p>alert</p>
+                    <p>prompt</p>
+                    <p>confirm</p>
+                </section>
+                <section>
+                    <p>Comments: // or /* */</p>
+                    <p>Syntactic sugars: a++; a+=2; ...</p>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>A Javascript Program</h2>
+                    <p>Statement: 1; (Semicolon is obligatory some times, if not sure use it)</p>
+                    <p>Functions</p>
+                    <p>Classes</p>
+                </section>
+                <section>
+                    <h2>Functions</h2>
+                    <p> <pre>var area = function(a,b){ return a * b; };  Function Expression</pre> </p>
+                    <p> <pre>function area(a,b){ return a * b; } Function Declaration (hoisted)</pre> </p>
+                    <p> <pre> area(2,5);</pre></p>
+                    <p> <span class="fragment highlight-blue">Which?</span></p>
+                </section>
+                <section>
+                    <p> return; => undefined</p>
+                    <p>variables are local to their scope (functions)</p>
+                    <p>let variables are local to their block</p>
+                    <p> Functions as variables are <span class="fragment highlight-green">VERY</span> useful! </p>
+                </section>
+                <section>
+                    <h2>Callbacks <a href="http://jsforcats.com/#callbacks">see</a></h2>
+                    <p>Asynchronous</p>
+                    <p>Pass a function</p>
+                    <p>When finished call the function</p>
+                    <q cite="http://jsforcats.com/">
+                        &ldquo;Remember: programming is all about laziness and you should be the one sleeping, not your computer.&rdquo; --jsforcats</q>                    
+                </section>
+                <section>
+                    <h2>Exercise</h2>
+                    <p> Make a program to solve the  Tower of Hanoi</p>
+                    <p class="fragment highlight-red">USEFUL FOR ALL JAVASCRIPT PROGRAMMING: 
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">MDN</a>
+                    <a href="http://www.w3schools.com/js/default.asp">w3schools</a>
+                     </p>
+                </section>
+            </section>
+            <section>
+                <section> Objects </section>
+
+                <section>
+                <section> Modifying the DOM
+
+                </section>
+                    
+                </section>
+            </section>
+            <section> References:
+                <ul>
+                    <li>http://www.w3schools.com/</li>
+                    <li>https://www.w3.org/</li>
+                    <li>http://eloquentjavascript.net/</li>
+                    <li>http://jsforcats.com/ (Some examples were taken from this nice guide)</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+            src: '../reveal.js/plugin/markdown/marked.js'
+        }, {
+            src: '../reveal.js/plugin/markdown/markdown.js'
+        }, {
+            src: '../reveal.js/plugin/notes/notes.js',
+            async: true
+        }, {
+            src: '../reveal.js/plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }]
+    });
+    </script>
+</body>
+
+</html>
