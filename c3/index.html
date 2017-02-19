@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Servlets</title>
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Servlet Basics</h1>
+            </section>
+            <section>
+                <h2>Web Applications</h2>
+                <p>Presentation Oriented</p>
+                <p>Service Oriented</p>
+            </section>
+            <section>
+                <h2>Old days</h2>
+                <p>CGI(Common Gateway Interface)</p>
+                <p>Separate process per request</p>
+                <p class="fragment highlight-red">Performance problems (CPU and Memory) </p>
+            </section>
+            <section>
+                <p>A servlet is a <span class="fragment highlight-green">Java programming language class</span> used to extend the capabilities of servers that host applications accessed by means of a request-response programming model</p>
+            </section>
+            <section>
+                <h2>Servlet Life Cicle</h2>
+                <p>init()</p>
+                <p>service()</p>
+                <p>destroy()</p>
+            </section>
+            <section>
+                <section>
+                    <h2>Hello Servlet</h2>
+                    <img src="resources/helloServlet.png"></a>
+                    <p>
+                        <q>Schildt, Herbert. Java: the complete reference. McGraw-Hill Education Group, 2014.</q>
+                    </p>
+                </section>
+                <section>
+                    <h2>Steps:</h2>
+                </section>
+                <section>
+                    <h3>1. Compile:</h3>
+                    <pre>javac HelloServlet.java -classpath "&lt;path_to_apache&gt;/lib/servlet-api.jar"</pre>
+                </section>
+                <section>
+                    <h3>2. Add *.class file(s) to tomcat</h3>
+                    <p>Copy .class file for example into <pre>/webapps/examples/WEB-INF/classes</pre></p>
+                </section>
+                <section>
+                    <h3>3. Add servlet name and mapping</h3>
+                    <ol>
+                        <li>Open <pre>WEB-INF/web.xml</pre></li>
+                        <li>Add servlet name:
+                            <pre>&lt;servlet&gt;
+&lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;
+&lt;servlet-class&gt;HelloServlet&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+</pre></li>
+                    </ol>
+                </section>
+            </section>
+            <section> References:
+                <ul>
+                    <li>https://docs.oracle.com/javaee/7/tutorial</li>
+                    <li>Schildt, Herbert. Java: the complete reference. McGraw-Hill Education Group, 2014.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+            src: '../reveal.js/plugin/markdown/marked.js'
+        }, {
+            src: '../reveal.js/plugin/markdown/markdown.js'
+        }, {
+            src: '../reveal.js/plugin/notes/notes.js',
+            async: true
+        }, {
+            src: '../reveal.js/plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }]
+    });
+    </script>
+</body>
+
+</html>
