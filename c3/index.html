@@ -70,12 +70,106 @@
                         <li>Open <pre>WEB-INF/web.xml</pre></li>
                         <li>Add servlet name:
                             <pre>&lt;servlet&gt;
-&lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;
-&lt;servlet-class&gt;HelloServlet&lt;/servlet-class&gt;
+    &lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;HelloServlet&lt;/servlet-class&gt;
 &lt;/servlet&gt;
 </pre></li>
+                        <li>Add Servlet mapping:
+                            <pre>&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/servlet/HelloServlet&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;</pre>
+                        </li>
                     </ol>
                 </section>
+                <section>
+                    <p>Start Tomcat</p>
+                    <p>Request servlet</p>
+                    <p>Smile 😀</p>
+                </section>
+                <section>
+                    <p>Play with the servlet, add some html tags</p>
+                </section>
+                <section>
+                    <p>To get parameters:</p>
+                    <p>request.getParameterNames()</p>
+                    <p>request.getParameter("parameter")</p>
+                </section>
+            </section>
+            <section>
+                <h2>Class Exercise</h2>
+                <p>Do an UML-Class Diagram of the Servlet Hierarchy</p>
+                <p>Include: 3 Interesting methods per class</p>
+            </section>
+            <section>
+                <section>
+                    <h2>Http Servlet</h2>
+                    <p>getCookies</p>
+                    <p>getSession</p>
+                    <p>addCookie</p>
+                    <p>setStatus</p>
+                </section>
+                <section>
+                    <h2>Types of http requests</h2>
+                    <p>Hypertext Transfer Protocol: Communications between clients and servers</p>
+                    <h4>GET:</h4>
+                    <p>Requests data from a specified resource</p>
+                    <p>demo?name1=value1&amp;name2=value2</p>
+                    <p>Can be used for forms too but NEVER for sensitive data</p>
+                    <p>Should be used only to retreive data</p>
+                    <h4>POST: </h4>
+                    <p>Submits data to be processed to a specified resource</p>
+                    <p>Data goes in http message body (test)</p>
+                </section>
+                <section>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th style="width:15%">Method</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>HEAD</td>
+                                <td>Same as GET but returns only HTTP headers and no document body</td>
+                            </tr>
+                            <tr>
+                                <td>PUT</td>
+                                <td>Uploads a representation of the specified URI</td>
+                            </tr>
+                            <tr>
+                                <td>DELETE</td>
+                                <td>Deletes the specified resource</td>
+                            </tr>
+                            <tr>
+                                <td>OPTIONS</td>
+                                <td>Returns the HTTP methods that the server supports</td>
+                            </tr>
+                            <tr>
+                                <td>CONNECT</td>
+                                <td>Converts the request connection to a transparent TCP/IP tunnel</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="https://www.w3schools.com/tags/ref_httpmethods.asp">see</a>
+                </section>
+                <section>
+                <img src="resources/gethtml1.png">
+                <img src="resources/gethtml2.png">
+                </section>
+                <section>
+                <img src="resources/getServlet.png">
+                </section>
+            </section>
+            <section>
+                Servlets in an IDE
+                <p>Do a hello servlet in netbeans</p>
+                <p>Change get servlet to a post servlet</p>
+                <p>Put war in tomcat</p>
+            </section>
+            <section>
+                <h2>Homework:</h2>
+                <p>Read Schildt, Herbert. Java: the complete reference. McGraw-Hill Education Group, 2014 Chapter 38</p>
+                <p>Do a nice, login page with its respective servlet(2). If logged return a hello name(use cookies and sessions).</p>
             </section>
             <section> References:
                 <ul>
