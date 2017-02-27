@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Servlets</title>
+    <title>JSP's</title>
     <link rel="stylesheet" href="../reveal.js/css/reveal.css">
     <link rel="stylesheet" href="../reveal.js/css/theme/black.css">
     <!-- Theme used for syntax highlighting of code -->
@@ -24,12 +24,83 @@
         <div class="slides">
             <section>
                 <h1>JSP's</h1>
+                <p class="fragment">Java Server Pages</p>
+                <p class="fragment">Mix static HTML with dynamic content</p>
             </section>
-           
+            <section>
+                <section>
+                    <h2>Basics</h2>
+                    <p>Use &lt;% java code %&gt; </p>
+                    <img src="resources/jsp1.png">
+                </section>
+                <section>
+                    <h2>Basics</h2>
+                    <p>Use &lt;%= return value %&gt; </p>
+                    <p>Use &lt;% Java statement (scriptlet) %&gt; </p>
+                    <p>Use &lt;%! Declaration (methods, atributes) %&gt; </p>
+                </section>
+                <section>
+                    <p>Test example</p>
+                    <p>Find .java of the jsp</p>
+                </section>
+                <section>
+                    <p>Add "= new java.util.Date()"</p>
+                    <p>Add values for System.getProperty for various system properties such as java.version, java.home, os.name, user.name, user.home, user.dir</p>
+                </section>
+                <section>
+                    Use a scriptlet:
+                    <p>Add a comment (&lt;%--comment --%&gt;) and add a System.out.println()</p>
+                    <p>Where does the output show?</p>
+                    <p>write with out.println()</p>
+                    <p>Where does the output go?</p>
+                </section>
+                <section>
+                    <p>Create a table with the numbers from 1 to 10 using a for.</p>
+                    <p class="fragment">add an italic tag if the number is even</p>
+                    <q>Scriptlets and html can be mixed</q>
+                </section>
+                <section>
+                    <h2>Directives</h2>
+                    <p>Used to import: &lt;%@ page import=&quot;java.util.*&quot; %&gt;</p>
+                    <p>Used to include other jsps: &lt;%@ include file=&quot;header.jsp&quot; %&gt;</p>
+                </section>
+                <section>
+                    Create a header.jsp, a footer.jsp and page1.jsp, page2.jsp that use the same header and footer.
+                </section>
+                <section>
+                    Declare a method with &lt;! , call it and view how the generated code puts it.
+                </section>
+                <section>
+                    <p>Try &lt;jsp:include page=&quot;header.jsp&quot;/&gt;</p>
+                    <p>What happens? how does it behave compared with tpage import?</p>
+                    <p>Add a call to date in header.jsp</p>
+                </section>
+                <section>
+                    Using request.getParameter("name") create a page that says hello with the persons name
+                </section>
+            </section>
+            <section>
+                <h2>Beans</h2> Check the definition on Shildt book, chapter 37
+            </section>
+            <section>
+                <p>Create a UserData bean with username, email and age</p>
+                <p>Create a jsp to receive the data and save it in a bean</p>
+                <p>
+                    <pre>&lt;jsp:useBean id=&quot;user&quot; class=&quot;test.UserData&quot; scope=&quot;session&quot; /&gt;
+&lt;jsp:setProperty name=&quot;user&quot; property=&quot;*&quot;/&gt;</pre></p>
+                <p>Create a jsp that reads the jsp data: using same usea bean and user.getUserName() ...</p>
+            </section>
+            <section>
+            <p>Write an agenda app that allows to list, show, create and modify contacts, using jsps, servlets, and beans.</p>
+            <p>Dont forget to use css to make it nice. Remember you can split pages to avoid having repeated code.</p>            
+            </section>
             <section> References:
                 <ul>
                     <li>https://docs.oracle.com/javaee/7/tutorial</li>
                     <li>Schildt, Herbert. Java: the complete reference. McGraw-Hill Education Group, 2014.</li>
+                    <li>http://pdf.coreservlets.com/JSP-Overview.pdf</li>
+                    <li>http://www.jsptut.com/</li>
+                    <li>https://www.tutorialspoint.com/jsp</li>
                 </ul>
             </section>
         </div>
