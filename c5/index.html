@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Architectural Patterns</title>
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Architectural Patterns</h1>
+            </section>
+            <section>
+                <h2>Main Ideas</h2>
+                <p class="fragment">Give Structure</p>
+                <p class="fragment">Separate Concerns (Easier to maintain and test)</p>
+                <p class="fragment">Increase Flexibility</p>
+                <p class="fragment">High Cohesion and Low Coupling</p>
+            </section>
+            <section>
+                <h2>Examples</h2>
+                <p>Layered (N-Layer)</p>
+                <p>Microservices(SOA)</p>
+            </section>
+            <section>
+                <h2>N-Tier Architecture</h2>
+                <h3>3 - Tier Architecture:</h3>
+                <ul>
+                    <li>Data Layer</li>
+                    <li>Business(Logic) Layer</li>
+                    <li>Presentation Layer (Service Layer)</li>
+                </ul>
+            </section>
+            <section>
+                <h2>3 - Tier Architecture information flow</h2>
+                <img src="resources/3Tier.png">
+            </section>
+            <section>Architectures are a <b>logical</b> construct that may translate in physical(code) divisions of software</section>
+            <section>
+                <section>
+                    <h2>UI Development Patterns</h2>
+                </section>
+                <section>
+                    <h2>MVC</h2>
+                    <p>Model</p>
+                    <p>View</p>
+                    <p>Controller</p>
+                    <q>Separated Presentation: Ensure that any code that manipulates presentation only manipulates presentation, pushing all domain and data source logic into clearly separated areas of the program -- Martin Fowler
+                        <q>
+                </section>
+                <section>
+                    <p>A well developed application should be able to support multiple presentations</p>
+                    <p>Domain objects should be self contained</p>
+                </section>
+                <section>
+                    <img src="resources/strategiesCallingJsp.png" width="100%">
+                </section>
+                <section>
+                    <q>In this approach, known as the Model View Controller (MVC) or Model 2 architecture, you let each technology concentrate on what it excels at. The original request is handled by a servlet. The servlet invokes the business-logic and data-access code and creates beans to represent the results (that’s the model). Then, the servlet decides which JSP page is appropriate to present those particular results and forwards the request there (the JSP page is the view). The servlet decides what business logic code applies and which JSP page should present the results (the servlet is the controller). --coreServlets
+                        <q>
+                </section>
+                <section>
+                    <ol>
+                        <li>Controller(Servlet)</li>
+                        <li>View(JSP)</li>
+                        <li>Model(Java Class, Action)</li>
+                    </ol>
+                    <p class="fragment">You can use BeanUtilities.populateBean(UserData, request);</p>
+                </section>
+                <section>
+                    <p>Servlet</p>
+                    <pre>ValueObject value = new ValueObject(...);
+request.setAttribute("key", value);
+RequestDispatcher dispatcher = request.getRequestDispatcher("SomePage.jsp");
+dispatcher.forward(request, response);
+</pre>
+                    <p>JSP Page</p>
+                    <pre>&lt;jsp:useBean id=&quot;key&quot; type=&quot;somePackage.ValueObject&quot; scope=&quot;request&quot;/&gt;
+&lt;jsp:getProperty name=&quot;key&quot; property=&quot;someProperty&quot; /&gt;</pre>
+                </section>
+                <section>
+                    <h2>Example</h2>
+                    <pre>
+BankCustomer customer = BankCustomer.getCustomer(request.getParameter("id"));
+String address;
+if (customer == null) {
+  address = "/WEB-INF/bank-account/UnknownCustomer.jsp";
+} else if (customer.getBalance() < 0) {
+  address = "/WEB-INF/bank-account/NegativeBalance.jsp";
+  request.setAttribute("badCustomer", customer);
+} else if (customer.getBalance() < 10000) {
+  address = "/WEB-INF/bank-account/NormalBalance.jsp";
+  request.setAttribute("regularCustomer", customer);
+} else {
+  address = "/WEB-INF/bank-account/HighBalance.jsp";
+  request.setAttribute("eliteCustomer", customer);
+}
+RequestDispatcher dispatcher = request.getRequestDispatcher(address);
+dispatcher.forward(request, response);
+                    </pre>
+                </section>
+            </section>
+            <section> References:
+                <ul>
+                    <li>Schildt, Herbert. Java: the complete reference. McGraw-Hill Education Group, 2014.</li>
+                    <li>http://pdf.coreservlets.com/MVC.pdf</li>
+                    <li>https://martinfowler.com/eaaDev/uiArchs.html</li>
+                    <li>https://msdn.microsoft.com/en-us/library/ee658109.aspx</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+            src: '../reveal.js/plugin/markdown/marked.js'
+        }, {
+            src: '../reveal.js/plugin/markdown/markdown.js'
+        }, {
+            src: '../reveal.js/plugin/notes/notes.js',
+            async: true
+        }, {
+            src: '../reveal.js/plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }]
+    });
+    </script>
+</body>
+
+</html>
