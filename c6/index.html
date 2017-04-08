@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Architectural Patterns</title>
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Web Services</h1>
+            </section>
+            <section>
+                <h2>"Big" Web Services</h2>
+                    <p>SOAP(WSDL) - XML</p>
+                <h2>RESTful Web Services</h2>
+                    <p>REST - JSON</p>                 
+            </section>
+            <section>
+                <h2>REST</h2>
+                <h3>Architectural Constraints</h3>
+                <ul>
+                    <li>Client-Server</li>
+                    <li>Stateless</li>
+                    <li>Cacheable</li>
+                    <li>Layered</li>
+                    <li>Uniform Interface</li>
+                </ul>
+            </section>
+            <section>
+                <p>SOAP</p>
+                <p>Simple Object Access Protocol</p>
+                <p>Based on XML</p>
+                <p>Format for sending and receiving messages</p>
+                <p>Includes:</p>
+                <ul>
+                    <li>Envelope element(Identify as SOAP)</li>
+                    <li>Header</li>
+                    <li>Body</li>
+                    <li>Fault Element</li>
+                </ul>                 
+            </section>
+            <section>
+                <pre>&lt;?xml version=&quot;1.0&quot;?&gt;
+
+&lt;soap:Envelope
+xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope/&quot;
+soap:encodingStyle=&quot;http://www.w3.org/2003/05/soap-encoding&quot;&gt;
+
+&lt;soap:Header&gt;
+...
+&lt;/soap:Header&gt;
+
+&lt;soap:Body&gt;
+...
+  &lt;soap:Fault&gt;
+  ...
+  &lt;/soap:Fault&gt;
+&lt;/soap:Body&gt;
+
+&lt;/soap:Envelope&gt;</pre>
+            </section>
+            <section>
+                WSDL
+                <p>Web Services Description Language</p>
+            </section>
+            <section>
+                <pre>&lt;message name=&quot;getTermRequest&quot;&gt;
+  &lt;part name=&quot;term&quot; type=&quot;xs:string&quot;/&gt;
+&lt;/message&gt;
+
+&lt;message name=&quot;getTermResponse&quot;&gt;
+  &lt;part name=&quot;value&quot; type=&quot;xs:string&quot;/&gt;
+&lt;/message&gt;
+
+&lt;portType name=&quot;glossaryTerms&quot;&gt;
+  &lt;operation name=&quot;getTerm&quot;&gt;
+    &lt;input message=&quot;getTermRequest&quot;/&gt;
+    &lt;output message=&quot;getTermResponse&quot;/&gt;
+  &lt;/operation&gt;
+&lt;/portType&gt;</pre>
+            </section>
+            <section> References:
+                <ul>
+                    <li>https://www.w3schools.com/xml/xml_soap.asp</li>
+                    <li>https://docs.oracle.com/javaee/7/tutorial</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+            src: '../reveal.js/plugin/markdown/marked.js'
+        }, {
+            src: '../reveal.js/plugin/markdown/markdown.js'
+        }, {
+            src: '../reveal.js/plugin/notes/notes.js',
+            async: true
+        }, {
+            src: '../reveal.js/plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }]
+    });
+    </script>
+</body>
+
+</html>
