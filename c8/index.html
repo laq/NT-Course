@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Architectural Patterns</title>
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Play Framework</h1>
+                What is:
+                https://www.playframework.com/
+
+
+                https://www.playframework.com/documentation/2.5.x/Anatomy
+
+                https://www.playframework.com/documentation/2.5.x/Tutorials
+
+                play-java
+
+                <pre>./sbt run</pre>
+                https://www.playframework.com/documentation/2.5.x/JavaActions
+
+                https://www.playframework.com/documentation/2.5.x/JavaTemplates
+
+                https://www.playframework.com/documentation/2.5.x/ScalaTemplates
+
+                http://www.baeldung.com/rest-api-with-play
+
+            </section>   
+            <section>
+                IDE plugins: https://www.playframework.com/documentation/2.5.x/IDE
+                Netbeans https://github.com/dcaoyuan/nbsbt
+                Eclipse https://github.com/typesafehub/sbteclipse
+                IntelliJ https://www.jetbrains.com/help/idea/2017.1/getting-started-with-play-2-x.html  
+            </section>
+            <section>
+                API
+                https://www.playframework.com/documentation/2.0.4/api/java/index.html
+                https://playframework.com/documentation/2.0/api/scala/index.html#package
+            </section>
+        </div>
+    </div>
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+            src: '../reveal.js/plugin/markdown/marked.js'
+        }, {
+            src: '../reveal.js/plugin/markdown/markdown.js'
+        }, {
+            src: '../reveal.js/plugin/notes/notes.js',
+            async: true
+        }, {
+            src: '../reveal.js/plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }]
+    });
+    </script>
+</body>
+
+</html>
